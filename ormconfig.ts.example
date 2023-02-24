@@ -1,0 +1,19 @@
+import { MysqlConnectionOptions } from "typeorm/driver/mysql/MysqlConnectionOptions";
+
+const ormConfig: MysqlConnectionOptions = {
+    type: 'mysql',
+    host: 'localhost',
+    database: 'recipes',
+    username: 'root',
+    password: '',
+    logging: false,
+    entities: ['dist/src/**/*.entity.js'],
+    migrations: [
+        'dist/src/database/migrations/*.js',
+    ],
+    cli: {
+        migrationsDir: 'src/database/migrations',
+    },
+}
+
+export default ormConfig;

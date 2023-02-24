@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      body { width: 400px; height: auto; font-family: sans-serif; margin: 0; }
+      .header { height: 80px; background-color: #58c16d; background-image:
+      linear-gradient(#58c16d, rgb(118, 221, 138)); display: flex; align-items:
+      center; justify-content: center; padding: 0 10px; position: relative;
+      font-size: 28px; font-weight: 600; color: #fff; } .header-img {
+      border-radius: 12px; height: 60px; position: absolute; left: 10px; }
+      .title { font-family: "Kavoon", sans-serif; text-align: center; font-size:
+      22px; } .shopping-list { list-style: none; padding: 0; }
+      .shopping-list-item { display: flex; align-items: center; padding: 5px
+      10px; } .circle { display: inline-block; height: 15px; width: 15px;
+      border: 1px solid rgb(70, 70, 70); border-radius: 50%; margin-right: 10px;
+      } .circle--checked { background-color: rgb(70, 70, 70); }
+    </style>
+  </head>
+  <body>
+    <header class='header'>
+      <img
+        src='data:image/png;base64,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'
+        alt=''
+        class='header-img'
+      />
+
+      <p>Rick Recipes</p>
+    </header>
+
+    <h1 class='title'>Shopping list</h1>
+
+    <ul class='shopping-list'>
+      {{#each ingredients}}
+        <li class='shopping-list-item'>
+          <span
+            class='circle {{#if checked}} circle--checked {{/if}}'
+          ></span>
+
+          <span>{{name}}</span>
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+*
+!admins/
+!sellers/
+!clients/
+!categories/
+!meal-periods/
+!ingredients/
+!recipes/
+!plans/
+!combos/
+!ads/
+!payment-methods/
+!shopping-list/
+!.gitignore

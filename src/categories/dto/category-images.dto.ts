@@ -1,0 +1,1 @@
+export type CategoryImagesDto = {banner?: string; appLogo?: string;};

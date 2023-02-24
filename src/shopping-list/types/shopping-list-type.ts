@@ -1,0 +1,1 @@
+export type ShoppingListType = 'today'|'weekly'|'monthly';

@@ -1,0 +1,110 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>Orden - #{{order.id}}</title>
+    <style>
+      * { font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+      sans-serif; color: rgb(171, 171, 171); margin: 0; padding: 0; font-size:
+      12px; } body { padding: 50px } .text-primary { color: #f66b3b } .text-dark
+      { color: #1d1d1d } .title { font-size: 30px; margin: 0; font-weight: bold
+      }
+    </style>
+  </head>
+
+  <body>
+    <div style='width: 100%; position: relative; height: 90px;'>
+      <div style='float: left;'>
+        {{!-- <img style="width: 180px;" src="{{asset('/images/logo.png')}}" alt=""> --}}
+      </div>
+      <div style='float: right; text-align: right;'>
+        <p class='text-primary title'>
+          ORDER
+        </p>
+        <span style='font-size: 20px;'>{{order.orderStatus.name}}
+          - #{{order.id}}</span>
+      </div>
+    </div>
+    <table
+      style='width: 100%; background: rgb(239, 239, 239); padding: 20px; border-radius: 5px;'
+    >
+      <thead>
+        <tr>
+          <th style='width: 50%; text-align: left; vertical-align: sub;'>
+            <p class='text-primary'>Customer information:</p>
+            <p style='margin: 5px 0px;'>Name: {{order.client.name}}</p>
+            <p style='margin: 5px 0px;'>Email:
+              {{order.client.user.email}}</p>
+            <p style='margin: 5px 0px;'>Phone number:
+              {{order.client.phoneNumber}}</p>
+          </th>
+          <th style='width: 50%; text-align: right; vertical-align: sub;'>
+            <div style='margin-bottom: 10px;'>
+              <p class='text-primary'>Order date</p>
+              <span>{{order.formattedCreatedAt}}</span>
+            </div>
+          </th>
+        </tr>
+      </thead>
+    </table>
+
+    <table style='width: 100%; text-align: center; margin: 20px 0px;'>
+      <thead>
+        <tr>
+          <th class='text-primary' style='padding: 10px;'>#</th>
+          <th class='text-primary' style='padding: 10px;'>Item</th>
+          <th class='text-primary' style='padding: 10px;'>Unit price</th>
+          <th class='text-primary' style='padding: 10px;'>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each order.orderItems as |item index|}}
+          <tr>
+            <td
+              style='border-bottom: 1px solid rgb(239, 239, 239); padding: 10px;'
+            >
+              {{inc index}}
+            </td>
+            <td
+              style='border-bottom: 1px solid rgb(239, 239, 239); padding: 10px;'
+            >
+              {{item.name}}
+            </td>
+            <td
+              style='border-bottom: 1px solid rgb(239, 239, 239); padding: 10px;'
+            >
+              {{item.price}}
+              $
+            </td>
+            <td
+              style='border-bottom: 1px solid rgb(239, 239, 239); padding: 10px;'
+            >
+              {{item.total}}
+              $
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <table style='width: 100%;'>
+      <tbody>
+        <tr>
+          <td
+            colspan='3'
+            style='text-align: left; border-bottom: 1px solid rgb(239, 239, 239); padding: 10px;'
+          >
+            <b>Total:</b>
+          </td>
+          <td
+            style='border-bottom: 1px solid rgb(239, 239, 239); padding: 10px; text-align: right;'
+          >
+            <b>{{order.total}}$</b>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</html>
